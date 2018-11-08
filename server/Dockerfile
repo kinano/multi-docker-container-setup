@@ -8,5 +8,4 @@ RUN npm install
 
 COPY . .
 
-# Run a DEV server
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]

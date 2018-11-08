@@ -8,5 +8,5 @@ RUN npm install
 
 COPY . .
 
-# Run a DEV server
-CMD ["npm", "run", "dev"]
+# This is the production npm start command
+CMD ["npm", "run", "start"]
