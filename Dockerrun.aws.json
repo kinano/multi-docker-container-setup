@@ -5,19 +5,22 @@
             "name": "kinan-multi-container-client",
             "image": "kinano/multi-container-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "kinan-multi-container-server",
             "image": "kinano/multi-container-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "kinan-multi-container-worker",
             "image": "kinano/multi-container-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
         {
             "name": "kinan-multi-container-nginx",
@@ -33,7 +36,8 @@
             "links": [
                 "kinan-multi-container-server",
                 "kinan-multi-container-client"
-            ]
+            ],
+            "memory": 128
         }
     ]
 }

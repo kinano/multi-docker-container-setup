@@ -17,6 +17,7 @@ The containerDefinitions dictionary containsa
     One service has to be marked as essential.
     *  portMappings map ECS host ports to container ports.
     * links allow us to connect one container to another in ECS
+    * memory (MB). This is a required setting
 5- Create an environment on EB
 6- We use managed services for databases,.. etc instead of spinning up our own containers.
 7- We need to create a security group to allow EB to connect to our managed data services.
