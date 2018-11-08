@@ -34,8 +34,8 @@
                 }
             ],
             "links": [
-                "kinan-multi-container-server",
-                "kinan-multi-container-client"
+                "server",
+                "client"
             ],
             "memory": 128
         }
