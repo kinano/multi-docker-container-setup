@@ -1,0 +1,39 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "kinan-multi-container-client",
+            "image": "kinano/multi-container-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "kinan-multi-container-server",
+            "image": "kinano/multi-container-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "kinan-multi-container-worker",
+            "image": "kinano/multi-container-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "kinan-multi-container-nginx",
+            "image": "kinano/multi-container-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "kinan-multi-container-server",
+                "kinan-multi-container-client"
+            ]
+        }
+    ]
+}

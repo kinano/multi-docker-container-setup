@@ -23,3 +23,18 @@ after_success:
   - docker push kinano/multi-container-server
   - docker push kinano/multi-container-worker
   - docker push kinano/multi-container-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: $EB_APP_NAME
+  env: $EB_ENV_NAME
+  bucket_name: $S3_BUCKET
+  bucket_path: $S3_PATH
+  # Only deploy master changes
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
