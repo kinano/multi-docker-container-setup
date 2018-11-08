@@ -2,28 +2,28 @@
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
-            "name": "kinan-multi-container-client",
+            "name": "client",
             "image": "kinano/multi-container-client",
             "hostname": "client",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "kinan-multi-container-server",
+            "name": "server",
             "image": "kinano/multi-container-server",
             "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "kinan-multi-container-worker",
+            "name": "worker",
             "image": "kinano/multi-container-worker",
             "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
-            "name": "kinan-multi-container-nginx",
+            "name": "nginx",
             "image": "kinano/multi-container-nginx",
             "hostname": "nginx",
             "essential": true,
