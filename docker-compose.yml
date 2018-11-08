@@ -25,8 +25,8 @@ services:
 
   client:
     build:
-      dockerfile: Dockefile.dev
-      content: ./client
+      dockerfile: Dockerfile.dev
+      context: ./client
     volumes:
       # Leave node_modules alone
       - /app/node_modules
@@ -35,7 +35,7 @@ services:
   worker:
     build:
       dockerfile: Dockerfile.dev
-      content: ./worker
+      context: ./worker
     volumes:
       - /app/node_modules
       - ./worker:/app
@@ -44,7 +44,7 @@ services:
     # nginx has to be up 100% of the time
     restart: always
     build:
-      dockerfile: /Dockerfile.dev
+      dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
       - '3050:80'
